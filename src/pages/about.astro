@@ -1,5 +1,18 @@
 ---
+const pageTitle = "About Me";
+const identity = {
+    firstName: "John",
+    lastName: "Doe",
+    age: 30,
+    location: "New York",
+    hobbies: ["reading", "traveling", "coding"],
+};
 
+const skills = ["HTML", "CSS", "JavaScript", "Astro", "React"];
+
+const happy = true;
+const finised = true;
+const goal = 3
 ---
 
 <html lang="en">
@@ -8,16 +21,42 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+        <title>{pageTitle}</title>
 	</head>
 	<body>
         <a href="/">Home</a>
         <a href="/about/">About</a>
         <a href="/blog/">Blog</a>
-
-		<h1>My Astro Site</h1>
+        <h1>{pageTitle}</h1>
         <h2>About Page</h2>
         <p>This is the about page of my Astro site.</p>
         <p>Here you can find information about the site, its purpose, and more.</p>
+        <p>Identity:</p>
+        <ul>
+            <li>First Name: {identity.firstName}</li>
+            <li>Last Name: {identity.lastName}</li>
+            <li>Age: {identity.age}</li>
+            <li>Location: {identity.location}</li>
+            <li>Hobbies: {identity.hobbies.join(", ")}</li>
+        </ul>
+        <p>Skills:</p>
+        <ul>
+            {skills.map(skill => (
+                <li>{skill}</li>
+            ))}
+        </ul>
+
+        { happy ? (
+            <p>I'm happy!</p>
+        ) : (
+            <p>I'm not happy.</p>
+        )}
+
+        { finised ? (
+            <p>My project is finished!</p>
+        ) : (
+            <p>My project is not finished yet.</p>
+        )}
+
 	</body>
 </html>
