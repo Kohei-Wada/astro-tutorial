@@ -1,5 +1,5 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "About";
 const identity = {
     firstName: "John",
@@ -10,26 +10,24 @@ const identity = {
 };
 
 const skills = ["HTML", "CSS", "JavaScript", "Astro", "React"];
+const finished = true;
 ---
-<BaseLayout pageTitle={pageTitle}>
-  <h2>私の素晴らしいブログのサブタイトル</h2>
-  <h2>About Page</h2>
-  <p>This is the about page of my Astro site.</p>
-  <p>Here you can find information about the site, its purpose, and more.</p>
-  <p>Identity:</p>
-  <ul>
-  <li>First Name: {identity.firstName}</li>
-  <li>Last Name: {identity.lastName}</li>
-  <li>Age: {identity.age}</li>
-  <li>Location: {identity.location}</li>
-  <li>Hobbies: {identity.hobbies.join(", ")}</li>
-  </ul>
-  <p>Skills:</p>
-  <ul>
-  {skills.map(skill => (
-      <li class="skill">{skill}</li>
-  ))}
-  </ul>
-  
-</BaseLayout>
 
+<BaseLayout pageTitle={pageTitle}>
+    <h2>私の素晴らしいブログのサブタイトル</h2>
+    <h2>About Page</h2>
+    <p>This is the about page of my Astro site.</p>
+    <p>Here you can find information about the site, its purpose, and more.</p>
+    <p>Identity:</p>
+    <ul>
+        <li>First Name: {identity.firstName}</li>
+        <li>Last Name: {identity.lastName}</li>
+        <li>Age: {identity.age}</li>
+        <li>Location: {identity.location}</li>
+        <li>Hobbies: {identity.hobbies.join(", ")}</li>
+    </ul>
+    <p>Skills:</p>
+    <ul>
+        {skills.map((skill) => <li class="skill">{skill}</li>)}
+    </ul>
+</BaseLayout>
